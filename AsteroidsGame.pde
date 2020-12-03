@@ -1,4 +1,5 @@
 Spaceship bob = new Spaceship();
+ArrayList <Asteroid> nums = new ArrayList <Asteroid>();
 Star [] nightSky = new Star[200];
 boolean wIsPressed = false;
 boolean aIsPressed = false;
@@ -13,6 +14,10 @@ public void setup()
   }
   background(0);
   bob.accelerate(0.2);
+  for (int i = 0; i < ((int)(Math.random() * 3) + 4); i++)
+  {
+    nums.add(new Asteroid());
+  }
 }
 public void draw() 
 {
@@ -32,6 +37,12 @@ public void draw()
   }
   bob.move();
   bob.show();
+  
+  for (int i = 0; i < nums.size(); i++)
+  {
+    nums.get(i).move();
+    nums.get(i).show();
+  }
 }
 public void keyPressed() {
   if (key == 'w') {
