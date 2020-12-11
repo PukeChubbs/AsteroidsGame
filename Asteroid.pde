@@ -22,13 +22,29 @@ class Asteroid extends Floater
     myCenterX = ((int)(Math.random() * 400));
     myCenterY = ((int)(Math.random() * 400)); //holds center coordinates   
     myXspeed = ((int)(Math.random() * 5) - 2); 
-    myYspeed = ((int)(Math.random() * 5) - 2);; //holds the speed of travel in the x and y directions   
+    myYspeed = ((int)(Math.random() * 5) - 2); //holds the speed of travel in the x and y directions   
     myPointDirection = ((int)(Math.random() * 360));
-    rotSpeed = ((int)(Math.random() * 5));
+    rotSpeed = ((int)(Math.random() * 5) + 1);
   }
   public void move ()   //move the Asteroid in the current direction of travel
   {      
     turn(rotSpeed);
     super.move();
+  }
+  public double getX()
+  {
+    return myCenterX;
+  }
+  public double getY()
+  {
+    return myCenterY;
+  }
+  public void setCenterX(double x)
+  {
+    myCenterX = x;
+  }
+  public void setCenterY(double y)
+  {
+    myCenterY = y;
   }
 }
